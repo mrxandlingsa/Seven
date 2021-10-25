@@ -94,8 +94,9 @@ namespace CMF
 
 		void OnDisable()
 		{ 
+			
 		}
-
+		
 		void OnEnable()
 		{
 			currentYRotation = transform.localEulerAngles.y;

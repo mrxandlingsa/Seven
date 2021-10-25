@@ -10,7 +10,7 @@ namespace CMF
 	public class CameraDistanceRaycaster : MonoBehaviour {
 
         //Transform component of camera;
-		public Transform cameraTransform;
+        public Transform cameraTransform;
         //Transform component of camera target;
 		public Transform cameraTargetTransform;
 
@@ -58,7 +58,7 @@ namespace CMF
 
             //Setup array to store ignore list layers;
             ignoreListLayers = new int[ignoreList.Length];
-
+			
             //Store ignore layer number for later;
             ignoreRaycastLayer = LayerMask.NameToLayer("Ignore Raycast");
 

@@ -13,17 +13,17 @@ namespace Player
 {
         public class PlayerWeaponManager : MonoBehaviour
         {
-                private static PlayerWeaponManager PlayerWeaponManagerInstance;
+                private static PlayerWeaponManager Instance;
                 
                 public static PlayerWeaponManager GetInstance()
                 {
                         // 如果类的实例不存在则创建，否则直接返回
-                        if (PlayerWeaponManagerInstance == null)
+                        if (Instance == null)
                         {
-                                PlayerWeaponManagerInstance = new PlayerWeaponManager();
+                                Instance = new PlayerWeaponManager();
                         }
 
-                        return PlayerWeaponManagerInstance;
+                        return Instance;
                 }
                 private PlayerWeaponManager()
                 {

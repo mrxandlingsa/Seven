@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 namespace Player
 {
-// Singleton
+
+
+    // 是否在此新建一个event
+    // 玩家的全部数据类型就全部都写在这个类中，表象在写其他的脚本
     public class PlayerBase : MonoBehaviour
     {
         // 这个静态的类有什么属性以后在顶
@@ -75,25 +78,10 @@ namespace Player
             ResetPlayerAttrBySkill();
         }
 
-
-
-
-
         //todo:
         public static void GetPlayerDataByXML()
         {
-            
-            
-        }
 
-
-        public static PlayerBase GetPlayerBaseInstance()
-        {
-            if (PlayerInstance == null)
-            {
-                PlayerInstance = new PlayerBase();
-            }
-            return PlayerInstance;
         }
 
         private void OnDestroy()
@@ -101,6 +89,32 @@ namespace Player
             
             Debug.LogError("static playerbase class delete");
             PlayerInstance = null;
+        }
+
+
+        // 减血和加血的重要的操作用单例类的两个方法来控制是不是又命题 ？？？？
+        public void AddHealth(int count)
+        {
+            if((PlayerCurrentHealth + count)>=PlayerMaxHealth)
+            {
+                PlayerCurrentHealth = PlayerMaxHealth;
+            }
+            else
+            {
+                PlayerCurrentHealth = PlayerCurrentHealth+count;
+            }
+        }
+        public void ReduceHealth(int count)
+        {
+             if((PlayerCurrentHealth + count)<=0)
+            {
+                PlayerCurrentHealth = 0;
+                // 设置PlayerFsm的状态为dead
+            }
+            else
+            {
+                PlayerCurrentHealth = PlayerCurrentHealth+count;
+            }
         }
         
     }

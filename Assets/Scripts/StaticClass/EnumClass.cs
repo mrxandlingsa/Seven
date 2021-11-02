@@ -18,22 +18,22 @@ namespace ServerGuilt
         // ���Ժ󿪷�������
         public enum UIPanelType
         {
-            UiInitPanel, // 初�?�界�? 开�? 继续 结束
+            UiInitPanel,// 初始界面
             MainMenuPanel,
             SystemSettingPanel,
             PausePanel,
             StorePanel
         };
 
-        // ����AI
+        // MonsterAI behaviour
         public enum HumanMonsterType
         {
-            Patrol,// �������� Ѳ�� ���߳�ʼ��Ѳ��
+            Patrol,
             Chase,//
             Doingwork,
             Talking,
             Dead,
-            Attack01,// ֻ��һЩ�����ĵ��ˣ�BOSS���˵�AI ��˵��
+            Attack01,
             Attack02,
             idle
         };
@@ -73,7 +73,7 @@ namespace ServerGuilt
 
 
 
-        //debuff的枚�?
+        //debuff的枚举
         public enum FloatStatus
         {
             ContainBleed,
@@ -82,7 +82,7 @@ namespace ServerGuilt
             //bu
         }
         
-        // 玩�?�当前�?��?�的类型的枚举�?
+        //装备部位类型
         public enum PlayerEquipingType
         {
             Head = 0,
@@ -112,6 +112,11 @@ namespace ServerGuilt
             
         }
 
-        
+        public enum ArmorType
+        {
+            ClothArmor,
+            LeatherArmor,
+            ChainArmor
+        }
     }
 }

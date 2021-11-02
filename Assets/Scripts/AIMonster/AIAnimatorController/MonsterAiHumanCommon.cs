@@ -1,3 +1,12 @@
+/*
+ * @Author: your name
+ * @Date: 2021-10-30 19:42:32
+ * @LastEditTime: 2021-10-31 15:33:36
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * æ­¤å¤„çš„monsteræ˜¯å¦ä¹Ÿè®¾è®¡æˆä¸ºFSM???
+ * @FilePath: \Seven\Assets\Scripts\AIMonster\AIAnimatorController\MonsterAiHumanCommon.cs
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +14,7 @@ using UnityEngine.AI;
 using ServerGuilt;
 using System;
 
-// <summary>
-// ÈËÎïAIµÄĞĞÎªÓĞ¶àÉÙÖÖ
-// ÓĞ³õÊ¼µÄÒ»¸ö×´Ì¬ ·¢ÏÖÍæ¼Òºóºó×ª±äÎªÑ²Âß×´Ì¬£¬--> ×·»÷ --> Õ½¶· »òÕß Íæ¼ÒÕ½¶·ÍÑÀëºó ¼ÌĞøÑ²Âß
-// 
-// mesh collider »¹ÊÇÃ¿´Î¶¼¶¯ ¼ÓÒ»ÏÂ°É
-// 
-// </summary>
+
 
 namespace  AIMonster
 {
@@ -19,24 +22,24 @@ namespace  AIMonster
     [System.Serializable]
     public class MonsterAiHumanCommon :BaseMonstorController
     {
-        [Header("³õÊ¼×´Ì¬")]
+        [Header("ï¿½ï¿½Ê¼×´Ì¬")]
         public EnumClass.HumanMonsterType init_status;
 
         [SerializeField]
         private EnumClass.HumanMonsterType cur_status;
 
         private float last_attack_time;
-        // Íæ¼ÒµÄobject
+        // ï¿½ï¿½Òµï¿½object
         private GameObject player_attack_target;
 
         public int AttackForce;
 
         private Animator animator;
         private NavMeshAgent enemy_nav;
-        [Header("¼ì²â¾àÀë£¬Íæ¼Ò½øÈë¹¥»÷")]
+        [Header("ï¿½ï¿½ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ò½ï¿½ï¿½ë¹¥ï¿½ï¿½")]
         public int sight_radius = 3;
 
-        [Header("ÈËĞÍµĞÈËAIµÄÒÆ¶¯ËÙ¶È")]
+        [Header("ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½AIï¿½ï¿½ï¿½Æ¶ï¿½ï¿½Ù¶ï¿½")]
         public float enemy_patrol_speed = 1.3f;
         public float enemt_chase_speed = 2.85f;
         [SerializeField]
@@ -81,7 +84,7 @@ namespace  AIMonster
                 this.cur_status = EnumClass.HumanMonsterType.Chase;
             }
 
-            // ·µ»ØÁËÔ­Ê¼µÄÎ»ÖÃ ¾Í½øĞĞ init status 
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­Ê¼ï¿½ï¿½Î»ï¿½ï¿½ ï¿½Í½ï¿½ï¿½ï¿½ init status 
             if (Vector3.Distance(this.transform.position, init_transform) <= 0.1f && (this.cur_status != EnumClass.HumanMonsterType.Chase))
             {
                 this.cur_status = this.init_status;
@@ -91,9 +94,9 @@ namespace  AIMonster
             switch (cur_status)
             {
                 case EnumClass.HumanMonsterType.Chase:
-                    //TODO: ×·»÷Íæ¼Ò
-                    //TODO: ·µ»Øµ½Ñ²Âß×´Ì¬
-                    //TODO: ÔÚ¹¥»÷·¶Î§ÄÚ¹¥»÷
+                    //TODO: ×·ï¿½ï¿½ï¿½ï¿½ï¿½
+                    //TODO: ï¿½ï¿½ï¿½Øµï¿½Ñ²ï¿½ï¿½×´Ì¬
+                    //TODO: ï¿½Ú¹ï¿½ï¿½ï¿½ï¿½ï¿½Î§ï¿½Ú¹ï¿½ï¿½ï¿½
                     //TODO: play animation 
                     enemy_nav.speed = enemt_chase_speed;
                     if (IsFindPlayer())
@@ -102,7 +105,7 @@ namespace  AIMonster
                     }
                     else
                     {
-                        // ·µ»ØÑ²ÂßµÄ×´Ì¬
+                        // ï¿½ï¿½ï¿½ï¿½Ñ²ï¿½ßµï¿½×´Ì¬
                         cur_status = EnumClass.HumanMonsterType.Patrol;
                     }    
 
@@ -111,7 +114,7 @@ namespace  AIMonster
                     break;
                 case EnumClass.HumanMonsterType.Patrol:
                     enemy_nav.speed = enemy_patrol_speed;
-                    // Èç¹û¹ÖÎïAIµÄ ¾àÀëÔ¶Àë³õÊ¼µÄµãµÄ»°£¬»Øµ½Ô­µã£¬·ñÔò£¬Ëæ»úÑ²Âß
+                    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½AIï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½Ê¼ï¿½Äµï¿½Ä»ï¿½ï¿½ï¿½ï¿½Øµï¿½Ô­ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ²ï¿½ï¿½
                     float distance_away = Vector3.Distance(this.transform.position, this.init_transform);
                     if (distance_away >= sight_radius)
                     {

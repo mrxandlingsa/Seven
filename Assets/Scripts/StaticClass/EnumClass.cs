@@ -18,7 +18,7 @@ namespace ServerGuilt
         // ���Ժ󿪷�������
         public enum UIPanelType
         {
-            UiInitPanel, // 初始界面 开始 继续 结束
+            UiInitPanel, // 初�?�界�? 开�? 继续 结束
             MainMenuPanel,
             SystemSettingPanel,
             PausePanel,
@@ -44,6 +44,7 @@ namespace ServerGuilt
             Drag,
             FirstEquip,
             SecondEquip,
+            Armor,
             Weapon,
         };
 
@@ -65,14 +66,14 @@ namespace ServerGuilt
         public enum SwordType
         {
             WarSword,// 战剑
-            BastardSwords,//混种剑
+            BastardSwords,//混�?��??
             Claymore,//苏格兰阔刃大斩剑
-            EstocSword,//破甲剑
+            EstocSword,//破甲�?
         }
 
 
 
-        //debuff的枚举
+        //debuff的枚�?
         public enum FloatStatus
         {
             ContainBleed,
@@ -81,7 +82,7 @@ namespace ServerGuilt
             //bu
         }
         
-        // 玩家当前装备的类型的枚举值
+        // 玩�?�当前�?��?�的类型的枚举�?
         public enum PlayerEquipingType
         {
             Head = 0,
@@ -90,15 +91,6 @@ namespace ServerGuilt
             Shoe = 3,
         }
 
-        // 物品的类型
-        // public enum ItemType
-        // {
-        //     Medicine,
-        //     Equipment,
-        //     SpecialItem
-        // }
-        
-        // 药品的类型
         public enum DrugType
         {
             HPAddition,
@@ -111,6 +103,14 @@ namespace ServerGuilt
             Assistant,
         }
 
+        public enum MonsterStatus
+        {
+            Mad,
+            Bloody,
+            ArmorPenetration,
+            //todo:
+            
+        }
 
         
     }

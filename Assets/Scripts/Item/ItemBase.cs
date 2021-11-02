@@ -13,8 +13,7 @@ namespace  Item
             set;
         }
         
-        private int Item_Count { get; set; }
-
+        private int item_count { get; set; }
         public virtual  void UseItem()
         {
             

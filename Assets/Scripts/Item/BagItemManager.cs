@@ -8,7 +8,7 @@ namespace Item
     // 玩家当前所拥有的全部物品
     public class BagItemManager : MonoBehaviour
     {
-        private static BagItemManager BagItemManagerInstance;
+        public static BagItemManager instance;
         
         private  List<ItemBase> item_list = new  List<ItemBase>();
         // key-->物品的类型  value--> 物品的数量 
@@ -18,11 +18,11 @@ namespace Item
         public static BagItemManager GetInstance()
         {
             // 如果类的实例不存在则创建，否则直接返回
-            if (BagItemManagerInstance == null)
+            if (instance == null)
             {
-                BagItemManagerInstance = new BagItemManager();
+                instance = new BagItemManager();
             }
-            return BagItemManagerInstance;
+            return instance;
         }
         
         //todo:
@@ -32,6 +32,27 @@ namespace Item
             // 依据player_data_dic 的key 值进行在 物品的配置里寻找
         }
 
+        // 获得/添加物品
+        public void AddItemSingle(ItemBase item_base)
+        {
+            item_list.Add(item_base);
+        }
+        public void AddItemMultiply(List<ItemBase> itembase_list)
+        {
+            for(int i =0;i<itembase_list.Count;i++)
+            {
+                item_list.Add(itembase_list[i]);
+            }
+        }
+
+        // 移除物品一次只能一个物品，就不用多个物品了
+        public void RemoveItemSingle(ItemBase item_base)
+        {
+            if(item_list.Contains(item_base) == false)
+            {
+                Debug.LogError("");
+            }
+        }
 
     }
 }

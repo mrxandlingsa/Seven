@@ -9,6 +9,8 @@ namespace CustomPlayerController
         public string verticalInputAxis = "Vertical";
         public KeyCode jumpKey = KeyCode.Space;
         
+        // 按下F键拾取
+        public KeyCode PickupKey = KeyCode.F;
         public bool useRawInput = true;
         
         public override float GetHorizontalMovementInput()
@@ -30,6 +32,10 @@ namespace CustomPlayerController
         public override bool IsJumpKeyPressed()
         {
             return Input.GetKey(jumpKey);
+        }
+        public override bool IsPickupKeypressed()
+        {
+            return Input.GetKey(PickupKey);
         }
         
         

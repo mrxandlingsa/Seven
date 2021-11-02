@@ -9,5 +9,7 @@ namespace CustomPlayerController
         public abstract float GetVerticalMovementInput();
 
         public abstract bool IsJumpKeyPressed();
+        
+        public abstract bool IsPickupKeypressed();
     }
 }

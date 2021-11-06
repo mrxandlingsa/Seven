@@ -18,7 +18,7 @@ public class HealthBarUI : MonoBehaviour
       MainCameraTrans = Camera.main.transform;
       foreach (var cans in FindObjectsOfType<Canvas>())
       {
-         if (cans.renderMode == RenderMode.WorldSpace)
+         if (cans.tag == "HealthBarCanvas")
          {
             UIBar = Instantiate(HealthBarPrefab, cans.transform).transform;
             HealthSlider = UIBar.GetChild(0).GetComponent<Image>();

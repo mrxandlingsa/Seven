@@ -31,6 +31,12 @@ public class AIMonsterStatus
         }
     }
 
+    public List<SingleMonsterStatus> GetCurrentMonsterStatusList()
+    {
+        return current_monster_status_list;
+    }
+
+    
 
 }
 

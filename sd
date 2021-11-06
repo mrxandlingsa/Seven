@@ -1,0 +1,107 @@
+[1mdiff --git a/Assets/Resources/Prefabs/UI/BarHolder.prefab b/Assets/Resources/Prefabs/UI/BarHolder.prefab[m
+[1mindex cc0ca73..7da2eac 100644[m
+[1m--- a/Assets/Resources/Prefabs/UI/BarHolder.prefab[m
+[1m+++ b/Assets/Resources/Prefabs/UI/BarHolder.prefab[m
+[36m@@ -72,7 +72,7 @@[m [mMonoBehaviour:[m
+   m_FillMethod: 0[m
+   m_FillAmount: 0.787[m
+   m_FillClockwise: 1[m
+[31m-  m_FillOrigin: 0[m
+[32m+[m[32m  m_FillOrigin: 1[m
+   m_UseSpriteMesh: 0[m
+   m_PixelsPerUnitMultiplier: 0.01[m
+ --- !u!1 &8646686266258045605[m
+[1mdiff --git a/Assets/Scenes.meta b/Assets/Scenes.meta[m
+[1mdeleted file mode 100644[m
+[1mindex d585e2f..0000000[m
+[1m--- a/Assets/Scenes.meta[m
+[1m+++ /dev/null[m
+[36m@@ -1,8 +0,0 @@[m
+[31m-fileFormatVersion: 2[m
+[31m-guid: cb6ecbfbce2964544b1572cf082421e5[m
+[31m-folderAsset: yes[m
+[31m-DefaultImporter:[m
+[31m-  externalObjects: {}[m
+[31m-  userData: [m
+[31m-  assetBundleName: [m
+[31m-  assetBundleVariant: [m
+[1mdiff --git a/Assets/Scenes/InitScene.unity b/Assets/Scenes/InitScene.unity[m
+[1mdeleted file mode 100644[m
+[1mindex ee88f80..0000000[m
+[1m--- a/Assets/Scenes/InitScene.unity[m
+[1m+++ /dev/null[m
+[36m@@ -1,542 +0,0 @@[m
+[31m-%YAML 1.1[m
+[31m-%TAG !u! tag:unity3d.com,2011:[m
+[31m---- !u!29 &1[m
+[31m-OcclusionCullingSettings:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  serializedVersion: 2[m
+[31m-  m_OcclusionBakeSettings:[m
+[31m-    smallestOccluder: 5[m
+[31m-    smallestHole: 0.25[m
+[31m-    backfaceThreshold: 100[m
+[31m-  m_SceneGUID: 00000000000000000000000000000000[m
+[31m-  m_OcclusionCullingData: {fileID: 0}[m
+[31m---- !u!104 &2[m
+[31m-RenderSettings:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  serializedVersion: 9[m
+[31m-  m_Fog: 0[m
+[31m-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}[m
+[31m-  m_FogMode: 3[m
+[31m-  m_FogDensity: 0.01[m
+[31m-  m_LinearFogStart: 0[m
+[31m-  m_LinearFogEnd: 300[m
+[31m-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}[m
+[31m-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}[m
+[31m-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}[m
+[31m-  m_AmbientIntensity: 1[m
+[31m-  m_AmbientMode: 0[m
+[31m-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}[m
+[31m-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}[m
+[31m-  m_HaloStrength: 0.5[m
+[31m-  m_FlareStrength: 1[m
+[31m-  m_FlareFadeSpeed: 3[m
+[31m-  m_HaloTexture: {fileID: 0}[m
+[31m-  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}[m
+[31m-  m_DefaultReflectionMode: 0[m
+[31m-  m_DefaultReflectionResolution: 128[m
+[31m-  m_ReflectionBounces: 1[m
+[31m-  m_ReflectionIntensity: 1[m
+[31m-  m_CustomReflection: {fileID: 0}[m
+[31m-  m_Sun: {fileID: 0}[m
+[31m-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}[m
+[31m-  m_UseRadianceAmbientProbe: 0[m
+[31m---- !u!157 &3[m
+[31m-LightmapSettings:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  serializedVersion: 12[m
+[31m-  m_GIWorkflowMode: 1[m
+[31m-  m_GISettings:[m
+[31m-    serializedVersion: 2[m
+[31m-    m_BounceScale: 1[m
+[31m-    m_IndirectOutputScale: 1[m
+[31m-    m_AlbedoBoost: 1[m
+[31m-    m_EnvironmentLightingMode: 0[m
+[31m-    m_EnableBakedLightmaps: 1[m
+[31m-    m_EnableRealtimeLightmaps: 0[m
+[31m-  m_LightmapEditorSettings:[m
+[31m-    serializedVersion: 12[m
+[31m-    m_Resolution: 2[m
+[31m-    m_BakeResolution: 40[m
+[31m-    m_AtlasSize: 1024[m
+[31m-    m_AO: 0[m
+[31m-    m_AOMaxDistance: 1[m
+[31m-    m_CompAOExponent: 1[m
+[31m-    m_CompAOExponentDirect: 0[m
+[31m-    m_ExtractAmbientOcclusion: 0[m
+[31m-    m_Padding: 2[m
+[31m-    m_LightmapParameters: {fileID: 0}[m
+[31m-    m_LightmapsBakeMode: 1[m
+[31m-    m_TextureCompression: 1[m
+[31m-    m_FinalGather: 0[m
+[31m-    m_FinalGatherFiltering: 1[m
+[31m-    m_FinalGatherRayCount: 256[m
+[31m-    m_ReflectionCompression: 2[m
+[31m-    m_Mixe

@@ -15,6 +15,13 @@ public class StatusUIControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        aIMonsterStatus = this.GetComponent<AIMonsterStatus>();
+        BleedStatus test_status = new BleedStatus(10);
+        //aIMonsterStatus.AddAIMonsterStatus(test_status);
+    }
+
+    private void OnEnable() 
+    {
         foreach (var cans in FindObjectsOfType<Canvas>())
         {
          if (cans.tag == "StatusCanvas")
@@ -22,16 +29,15 @@ public class StatusUIControl : MonoBehaviour
             StatusCanvas = cans;
          }
         }
-        aIMonsterStatus = this.GetComponent<AIMonsterStatus>();
-        Instantiate(StatusPre,StatusCanvas.transform);
-    }
-
-    private void OnEnable() {
+        
     }
     // Update is called once per frame
     void Update()
     {
-        
+        for (int i = 0; i < aIMonsterStatus.GetCurrentMonsterStatusList().Count; i++)
+        {
+            Instantiate(StatusPre, StatusCanvas.transform);
+        }
     }
 
 }

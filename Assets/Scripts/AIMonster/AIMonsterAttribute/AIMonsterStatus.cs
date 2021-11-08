@@ -12,7 +12,7 @@ public class SingleMonsterStatus
     private int last_time;
     private EnumClass.MonsterStatus monster_status;
 }
-public class AIMonsterStatus
+public class AIMonsterStatus:MonoBehaviour
 {
     // 要不要对这个进行这个限定，设置最高承受的状态个数
     private List<SingleMonsterStatus> current_monster_status_list;

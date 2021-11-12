@@ -9,7 +9,8 @@ using ServerGuilt;
  /// 单个状态
 public class SingleMonsterStatus
 {
-    private int last_time;
+    public float last_time;
+    public float last_time_attribute;
     private EnumClass.MonsterStatus monster_status;
 }
 public class AIMonsterStatus:MonoBehaviour

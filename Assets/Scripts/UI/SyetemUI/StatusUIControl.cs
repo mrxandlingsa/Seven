@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class StatusUIControl : MonoBehaviour
@@ -12,8 +14,7 @@ public class StatusUIControl : MonoBehaviour
     private Canvas StatusCanvas;
     private Transform InitedStatusUITrans;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         foreach (var cans in FindObjectsOfType<Canvas>())
         {
@@ -25,12 +26,22 @@ public class StatusUIControl : MonoBehaviour
         aIMonsterStatus = this.GetComponent<AIMonsterStatus>();
     }
 
-    private void OnEnable() {
+    // Start is called before the first frame update
+    void Start()
+    {
+        //test
+        BleedStatus bleedStatus = new BleedStatus(5);
+        aIMonsterStatus.AddAIMonsterStatus(bleedStatus);
+    }
+    
+    private void OnEnable()
+    {
+        aIMonsterStatus.status_event += GenerateStatusPrefab;
     }
     //update中仅检测状态的时间
     void Update()
     {
-        List<SingleMonsterStatus> status_list= aIMonsterStatus.GetCurrentMonsterStatusList();
+        List<SingleMonsterStatusBase> status_list= aIMonsterStatus.GetCurrentMonsterStatusList();
         if (status_list.Count == 0)
             return;
         for(int i =0;i<status_list.Count;i++)
@@ -43,9 +54,15 @@ public class StatusUIControl : MonoBehaviour
         }
     }
 
-    void GenerateStatusPrefab(string prefab_name)
+    void GenerateStatusPrefab(string prefab_name,int type)
     {
-        Instantiate(StatusPre, StatusCanvas.transform);
+        if (type == 1)
+        {
+            GameObject  obj = Instantiate(StatusPre, StatusCanvas.transform);
+            obj.transform.position = PrefabStatusTrans.position;
+            Debug.LogError("inited");
+        }
+
     }
 
     void DeleteStatusPrefab(string prefab_name)
@@ -61,5 +78,9 @@ public class StatusUIControl : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        
+    }
 }
 

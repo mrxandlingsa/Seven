@@ -261,7 +261,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1607759065496975385}
-  - component: {fileID: 5131933039678829489}
   m_Layer: 0
   m_Name: MonsterTest
   m_TagString: Untagged
@@ -287,19 +286,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5131933039678829489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8175185662525229589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017d5a9652e023d40b29c8bf05114067, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthBarPrefab: {fileID: 8646686266258045605, guid: e3b214fd4869e3b4ca15469990c43a39, type: 3}
-  BarPoint: {fileID: 5654191708624461888}
-  MaxHealth: 100
-  CurrentHealth: 100

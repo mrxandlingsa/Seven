@@ -32,6 +32,7 @@ public class StatusUIControl : MonoBehaviour
         //test
         BleedStatus bleedStatus = new BleedStatus(5);
         aIMonsterStatus.AddAIMonsterStatus(bleedStatus);
+        StartCoroutine(RefreshBySecondIEnum());
     }
     
     private void OnEnable()
@@ -40,6 +41,11 @@ public class StatusUIControl : MonoBehaviour
     }
     //update中仅检测状态的时间
     void Update()
+    {
+    }
+
+    //状态持续时间-1
+    void ReduceLastTimeBySecond()
     {
         List<SingleMonsterStatusBase> status_list= aIMonsterStatus.GetCurrentMonsterStatusList();
         if (status_list.Count == 0)
@@ -53,14 +59,16 @@ public class StatusUIControl : MonoBehaviour
             }
         }
     }
-
     void GenerateStatusPrefab(string prefab_name,int type)
     {
         if (type == 1)
         {
             GameObject  obj = Instantiate(StatusPre, StatusCanvas.transform);
             obj.transform.position = PrefabStatusTrans.position;
-            Debug.LogError("inited");
+        }
+        else if (type==2)
+        {
+            DeleteStatusPrefab(prefab_name);
         }
 
     }
@@ -81,6 +89,18 @@ public class StatusUIControl : MonoBehaviour
     private void LateUpdate()
     {
         
+    }
+
+    IEnumerator RefreshBySecondIEnum()
+    {
+        while(true)
+        {
+            ReduceLastTimeBySecond();
+            yield return new WaitForSeconds(1f);
+        }
+    }
+    private void OnDestroy() {
+        StopAllCoroutines();
     }
 }
 

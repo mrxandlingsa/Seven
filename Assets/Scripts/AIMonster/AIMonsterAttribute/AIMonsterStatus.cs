@@ -12,7 +12,7 @@ using ServerGuilt;
 public abstract class SingleMonsterStatusBase
 {
     public float last_time;
-    private EnumClass.MonsterStatus monster_status;
+    public string status_name;
 
     public SingleMonsterStatusBase(int last_time_param)
     {
@@ -29,11 +29,25 @@ public class BleedStatus:SingleMonsterStatusBase
 {
     public BleedStatus(int last_time):base(last_time)
     {
+        base.status_name = "Bleed";
     }
 
     public override void DoFuntion()
     {
         Debug.LogError("bleed");
+    }
+}
+
+public class MadStatus:SingleMonsterStatusBase
+{
+    public MadStatus(int last_time):base(last_time)
+    {
+        base.status_name = "Mad";
+    }
+
+    public override void DoFuntion()
+    {
+        Debug.LogError("mad");
     }
 }
 
@@ -58,15 +72,19 @@ public class AIMonsterStatus:MonoBehaviour
 
     public void AddAIMonsterStatus(SingleMonsterStatusBase single_monster_status)
     {
+        string status_name = single_monster_status.status_name;
         current_monster_status_list.Add(single_monster_status);
-        status_event?.Invoke("a",1);
+        status_event?.Invoke(status_name,1);
     }
     
     public void RemoveAIMnsterStatus(SingleMonsterStatusBase single_monster_status)
     {
+        string status_str= single_monster_status.status_name;
         if(current_monster_status_list.Count != 0)
         {
+            
             current_monster_status_list.Remove(single_monster_status);
+            status_event?.Invoke(status_str,2);
         }
     }
 

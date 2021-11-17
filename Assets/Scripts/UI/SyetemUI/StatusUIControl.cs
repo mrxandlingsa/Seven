@@ -33,6 +33,10 @@ public class StatusUIControl : MonoBehaviour
         BleedStatus bleedStatus = new BleedStatus(5);
         aIMonsterStatus.AddAIMonsterStatus(bleedStatus);
         StartCoroutine(RefreshBySecondIEnum());
+        //在创建status canvas上创建一个空物体
+        GameObject StatusObject = new GameObject();
+        StatusObject.name = "StatusObject";
+        StatusObject.transform.SetParent(StatusCanvas.transform,true);
     }
     
     private void OnEnable()

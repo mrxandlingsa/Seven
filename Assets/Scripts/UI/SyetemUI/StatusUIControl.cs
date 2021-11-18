@@ -14,6 +14,8 @@ public class StatusUIControl : MonoBehaviour
     private Canvas StatusCanvas;
     private Transform InitedStatusUITrans;
 
+    private GameObject StatusObjectMain; 
+
     private void Awake()
     {
         foreach (var cans in FindObjectsOfType<Canvas>())
@@ -33,6 +35,12 @@ public class StatusUIControl : MonoBehaviour
         BleedStatus bleedStatus = new BleedStatus(5);
         aIMonsterStatus.AddAIMonsterStatus(bleedStatus);
         StartCoroutine(RefreshBySecondIEnum());
+        //在创建status canvas上创建一个空物体
+        GameObject StatusObject = new GameObject();
+        StatusObject.name = "StatusObject";
+        StatusObject.transform.SetParent(StatusCanvas.transform,true);
+        //TODO: 需测试
+        this.StatusObjectMain = StatusObject;
     }
     
     private void OnEnable()
@@ -86,11 +94,23 @@ public class StatusUIControl : MonoBehaviour
         }
     }
 
+    //创建出status object跟随
     private void LateUpdate()
     {
-        
+        StatusObjectMain.transform.position = PrefabStatusTrans.position;
+        StatusObjectMain.transform.forward = -StatusCanvas.transform.forward;
     }
 
+
+
+    void DoStatusFuntion()
+    {
+        switch
+        {
+            case a:
+            break;
+        }
+    }
     IEnumerator RefreshBySecondIEnum()
     {
         while(true)

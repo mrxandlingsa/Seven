@@ -13,10 +13,10 @@ public abstract class SingleMonsterStatusBase
 {
     public float last_time;
     public string status_name;
-
-    public SingleMonsterStatusBase(int last_time_param)
+    //该属性的持续时间
+    public float status_attribute_time;
+    public SingleMonsterStatusBase()
     {
-        last_time = last_time_param;
     }
 
     public abstract void DoFuntion();
@@ -24,10 +24,9 @@ public abstract class SingleMonsterStatusBase
 
 }
 
-
 public class BleedStatus:SingleMonsterStatusBase
 {
-    public BleedStatus(int last_time):base(last_time)
+    public BleedStatus(int last_time):base()
     {
         base.status_name = "Bleed";
     }
@@ -40,7 +39,7 @@ public class BleedStatus:SingleMonsterStatusBase
 
 public class MadStatus:SingleMonsterStatusBase
 {
-    public MadStatus(int last_time):base(last_time)
+    public MadStatus(int last_time):base()
     {
         base.status_name = "Mad";
     }
@@ -51,12 +50,24 @@ public class MadStatus:SingleMonsterStatusBase
     }
 }
 
+public class FireHurtStatus:SingleMonsterStatus
+{
+
+
+}
+
+
 public class SingleMonsterStatus
 {
     public float last_time;
     public float last_time_attribute;
     private EnumClass.MonsterStatus monster_status;
 }
+
+
+
+
+
 
 [System.Serializable]
 public class AIMonsterStatus:MonoBehaviour

@@ -14,7 +14,7 @@ public class StatusUIControl : MonoBehaviour
     private Canvas StatusCanvas;
     private Transform InitedStatusUITrans;
 
-    private GameObject StatusObjectMain; 
+    public GameObject StatusObjectMain; 
 
     private void Awake()
     {
@@ -105,11 +105,6 @@ public class StatusUIControl : MonoBehaviour
 
     void DoStatusFuntion()
     {
-        switch
-        {
-            case a:
-            break;
-        }
     }
     IEnumerator RefreshBySecondIEnum()
     {

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - StatusCanvas
   - HealthBarCanvas
+  - StatusNodeTag
   layers:
   - Default
   - TransparentFX

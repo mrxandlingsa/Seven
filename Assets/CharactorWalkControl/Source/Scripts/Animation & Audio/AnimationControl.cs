@@ -74,8 +74,8 @@ namespace CMF
 			animator.SetBool("IsStrafing", useStrafeAnimations);
 			
 			//attack animator settings
-			animator.SetBool("Attack01",customMouseInput.IsLeftMouseClicked());
-			
+			animator.SetBool("Attack01",customMouseInput.IsLeftMouseClicked() && controller.IsGrounded());
+			//animator.SetBool("Attack06",customMouseInput.IsLeftShiftPressed());
 		}
 
 

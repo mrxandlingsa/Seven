@@ -13,7 +13,7 @@ namespace CMF
 
 		//If this is enabled, Unity's internal input smoothing is bypassed;
 		public bool useRawInput = true;
-
+	
         public override float GetHorizontalMovementInput()
 		{
 			if(useRawInput)
@@ -34,5 +34,6 @@ namespace CMF
 		{
 			return Input.GetKey(jumpKey);
 		}
+		
     }
 }

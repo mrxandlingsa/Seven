@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using CustomPlayerController;
 namespace CMF
 {
 	//This script controls the character's animation by passing velocity values and other information ('isGrounded') to an animator component;
@@ -11,7 +11,8 @@ namespace CMF
 		Animator animator;
 		Transform animatorTransform;
 		Transform tr;
-
+		private CustomMouseInput customMouseInput;
+		
 		//Whether the character is using the strafing blend tree;
 		public bool useStrafeAnimations = false;
 
@@ -23,8 +24,8 @@ namespace CMF
 			controller = GetComponent<Controller>();
 			animator = GetComponentInChildren<Animator>();
 			animatorTransform = animator.transform;
-
 			tr = transform;
+			customMouseInput = GetComponent<CustomMouseInput>();
 		}
 
 		//OnEnable;
@@ -71,6 +72,10 @@ namespace CMF
 			//Pass values to animator;
 			animator.SetBool("IsGrounded", controller.IsGrounded());
 			animator.SetBool("IsStrafing", useStrafeAnimations);
+			
+			//attack animator settings
+			animator.SetBool("Attack01",customMouseInput.IsLeftMouseClicked());
+			
 		}
 
 

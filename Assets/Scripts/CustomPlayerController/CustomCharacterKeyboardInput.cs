@@ -8,7 +8,7 @@ namespace CustomPlayerController
         public string horizontalInputAxis = "Horizontal";
         public string verticalInputAxis = "Vertical";
         public KeyCode jumpKey = KeyCode.Space;
-        
+        //鼠标左键普通攻击(attack01)
         // 按下F键拾取
         public KeyCode PickupKey = KeyCode.F;
         public bool useRawInput = true;

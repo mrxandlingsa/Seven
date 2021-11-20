@@ -7,6 +7,8 @@ TagManager:
   - StatusCanvas
   - HealthBarCanvas
   - StatusNodeTag
+  - SwordSocket
+  - Sword
   layers:
   - Default
   - TransparentFX

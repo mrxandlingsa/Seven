@@ -58,18 +58,18 @@ namespace tools
             }
         }
         
-        // 此方法为返回单个的prefabs
+        // 此方法为返回单个的prefab
         public static GameObject GetPrefabByPath(string path)
         {
-            string[] files = Directory.GetFiles(path, "*.prefab", SearchOption.AllDirectories);
-            if (files.Length >= 2)
-            {
-                // 这因该是不可能的
-                Debug.LogError("prefab重复命名");
-                return null;
-            }
-            
-            GameObject _prefab = AssetDatabase.LoadAssetAtPath(files[0], typeof(GameObject)) as GameObject;
+            // string[] files = Directory.GetFiles(path, "*.prefab", SearchOption.AllDirectories);
+            // if (files.Length >= 2)
+            // {
+            //     // 这因该是不可能的
+            //     Debug.LogError("prefab重复命名");
+            //     return null;
+            // }
+            string unity_path = path + ".prefab";
+            GameObject _prefab = AssetDatabase.LoadAssetAtPath(unity_path, typeof(GameObject)) as GameObject;
             return _prefab;
             }
 

@@ -12,7 +12,8 @@ namespace CMF
 		Transform animatorTransform;
 		Transform tr;
 		private CustomMouseInput customMouseInput;
-		
+
+		private CharacterKeyboardInput characterKeyboardInput;
 		//Whether the character is using the strafing blend tree;
 		public bool useStrafeAnimations = false;
 
@@ -26,6 +27,7 @@ namespace CMF
 			animatorTransform = animator.transform;
 			tr = transform;
 			customMouseInput = GetComponent<CustomMouseInput>();
+			characterKeyboardInput =  GetComponent<CharacterKeyboardInput>();
 		}
 
 		//OnEnable;
@@ -76,6 +78,8 @@ namespace CMF
 			//attack animator settings
 			animator.SetBool("Attack01",customMouseInput.IsLeftMouseClicked() && controller.IsGrounded());
 			//animator.SetBool("Attack06",customMouseInput.IsLeftShiftPressed());
+			
+			animator.SetBool("UnequipWeaon",characterKeyboardInput.IsEquipedKeyPressed());
 		}
 
 

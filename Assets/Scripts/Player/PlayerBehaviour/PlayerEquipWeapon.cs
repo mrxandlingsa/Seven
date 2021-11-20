@@ -13,7 +13,8 @@ namespace Player.PlayerBehaviour
         private void Start()
         {
             SwordParentTrans = GameObject.FindWithTag("SwordSocket").transform;
-            DeleteCurrentWeapon();
+            //DeleteCurrentWeapon();
+            //LoadWeapon("PT_Medieval_Longsword_04_b");
         }
         
         private void DeleteCurrentWeapon()
@@ -23,12 +24,14 @@ namespace Player.PlayerBehaviour
         }
         private void LoadWeapon(string weapon_name)
         {
-            GameObject SwordPrefab = PrefabCacheUtil.GetPrefabByPath(weapon_name);
-            Vector3 init_position = new Vector3(0, 0, 0);
-            Instantiate(SwordPrefab, init_position, Quaternion.Euler(0f,0f,0f), SwordParentTrans);
+            string weapon_prefab_path = "Assets/Resources/Prefabs/Weapon/" + weapon_name;
+            GameObject SwordPrefab = PrefabCacheUtil.GetPrefabByPath(weapon_prefab_path);
+            var obj = Instantiate(SwordPrefab,SwordParentTrans);
+            obj.transform.localPosition = new Vector3(0f,0f,-0.4f);
+            obj.transform.localRotation = Quaternion.Euler(-100f, -30f, 30f);
         }
         
-
+        
 
 
     }

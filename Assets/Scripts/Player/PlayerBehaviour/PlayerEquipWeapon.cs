@@ -10,16 +10,15 @@ namespace Player.PlayerBehaviour
     public class PlayerEquipWeapon : MonoBehaviour
     {
         private Transform SwordParentTrans;
-
         private void Start()
         {
-            SwordParentTrans = this.transform.Find("SwordSocket");
+            SwordParentTrans = GameObject.FindWithTag("SwordSocket").transform;
             DeleteCurrentWeapon();
         }
         
         private void DeleteCurrentWeapon()
         {
-            Transform SwordTrans  = SwordParentTrans.GetChild(0);
+            GameObject SwordTrans = GameObject.FindWithTag("Sword");
             DestroyImmediate(SwordTrans.gameObject);
         }
         private void LoadWeapon(string weapon_name)

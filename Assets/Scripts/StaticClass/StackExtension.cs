@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 using ServerGuilt;
 public static class StackExtension
 {
-    //°ÑÕ»¶¥panel³öÕ»,²¢´Ó³¡¾°ÖÐÏûÊ§
+    //æŠŠæ ˆé¡¶panelå‡ºæ ˆ,å¹¶ä»Žåœºæ™¯ä¸­æ¶ˆå¤±
     public static UIPanel SearchPanelForType(this List<UIPanel> list,  EnumClass.UIPanelType panel_type)
     {
         foreach (var item in list)

@@ -161,7 +161,7 @@ public class UIManager
             UIBasePanel topPanel = panelStack.Peek();
             topPanel.OnPause();
         }
-
+        
         UIBasePanel panel = GetPanel(panel_type);
 
         //把指定类型的panel入栈并设定其状态为进入场景(OnEnter)

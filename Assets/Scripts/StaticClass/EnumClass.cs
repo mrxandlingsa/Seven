@@ -14,8 +14,7 @@ namespace ServerGuilt
             DONGWORK,
             Talking 
         };
-
-        // ���Ժ󿪷�������
+        
         public enum UIPanelType
         {
             UiInitPanel,// 初始界面

@@ -48,9 +48,9 @@ Material:
     - _Refraction_Scale: 28.6
     - _Refraction_Speed: 0.91
     - _Refraction_Strength: 0.0064
-    - _Ripple_Density: 35.42
+    - _Ripple_Density: 30.59
     - _Ripple_Slimness: 9.82
-    - _Water_Tiling_Speed: 1.42
+    - _Water_Tiling_Speed: 0.25
     m_Colors:
     - Vector2_CFDAA394: {r: 0.05, g: 0, b: 0, a: 0}
     - _Deep_Water_Color: {r: 0.051886797, g: 0.4758399, b: 1, a: 0.8156863}

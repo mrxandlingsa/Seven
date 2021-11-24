@@ -16,7 +16,13 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 65f9a457c99278646b91919e8c43693a
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 10068737855db57468088ae4dc2f12ee
+    m_Address: Assets/Materials/cartoon_fluid_Mat.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 956324c170c52c64fa5048ebbc6568d1, type: 2}
   m_SchemaSet:
